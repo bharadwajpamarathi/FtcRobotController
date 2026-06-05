@@ -2,9 +2,10 @@ package org.firstinspires.ftc.teamcode.Subsystems;
 
 import android.os.SystemClock;
 
+import com.acmerobotics.dashboard.config.Config;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
-
+@Config
 public class Gate {
     public enum States{
         OPEN,
@@ -15,8 +16,8 @@ public class Gate {
     public long deltaTime;
     private States state = States.CLOSE;
     Servo gateServo;
-    public static double openPosition = 1;
-    public static double closePosition = 0;
+    public static double openPosition = 0.5;
+    public static double closePosition = 0.5;
     public void initiate(HardwareMap hardwareMap){
         gateServo = hardwareMap.servo.get("gate");
     }
